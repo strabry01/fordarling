@@ -1,1 +1,98 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    width:100%;
+    height:100vh;
+
+    background-image:url("backgrounds/bg.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
+    font-family:Arial, sans-serif;
+}
+
+
+
+/* FIRST SCREEN */
+
+.first-screen{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:25px;
+}
+
+
+
+/* FLOATING IMAGE */
+
+.received{
+    width:350px;
+    max-width:80%;
+
+    animation:float 2s ease-in-out infinite;
+}
+
+
+
+/* BUTTON */
+
+.okay-btn{
+    width:160px;
+    max-width:40%;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.okay-btn:hover{
+    transform:scale(1.05);
+}
+
+
+
+/* SECOND SCREEN */
+
+.second-screen{
+    width:100%;
+    height:100vh;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+}
+
+
+
+/* FLOATING ANIMATION */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
