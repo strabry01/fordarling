@@ -44,6 +44,15 @@ body{
     max-width:80%;
 
     animation:float 2s ease-in-out infinite;
+    
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.received img:first-child{
+    width:100%;
 }
 
 
@@ -51,16 +60,21 @@ body{
 /* BUTTON */
 
 .okay-btn{
-    width:160px;
+    width:120px;
     max-width:40%;
 
     cursor:pointer;
 
     transition:0.3s;
+    
+    position:absolute;
+    top:78%;
+    left:50%;
+    transform:translate(-50%, -50%);
 }
 
 .okay-btn:hover{
-    transform:scale(1.05);
+    transform:translate(-50%, -50%) scale(1.05);
 }
 
 
