@@ -40,7 +40,7 @@ body{
 /* FLOATING IMAGE */
 
 .received{
-    width:350px;
+    width:400px;
     max-width:80%;
 
     animation:float 2s ease-in-out infinite;
@@ -57,10 +57,24 @@ body{
 
 
 
+/* DELIVERY IMAGE */
+
+.delivery-img{
+    width:80px;
+    max-width:30%;
+
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+
+
 /* BUTTON */
 
 .okay-btn{
-    width:120px;
+    width:100px;
     max-width:40%;
 
     cursor:pointer;
@@ -68,7 +82,7 @@ body{
     transition:0.3s;
     
     position:absolute;
-    top:78%;
+    top:80%;
     left:50%;
     transform:translate(-50%, -50%);
 }
@@ -89,6 +103,25 @@ body{
 
     justify-content:center;
     align-items:center;
+}
+
+
+
+/* TEXT STYLES */
+
+.letter-delivery-text{
+    position:absolute;
+    top:30%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+    font-family:'Princess Sofia', cursive;
+    font-size:24px;
+    color:#a4565c;
+    text-align:center;
+    
+    margin:0;
+    padding:0;
 }
 
 
