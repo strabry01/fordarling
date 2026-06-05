@@ -166,7 +166,7 @@ body{
 }
 
 .cake-img{
-    width:900px !important;
+    width:1200px;
     height:auto;
     display:block;
 }
@@ -209,4 +209,32 @@ body{
         transform:translateY(0px);
     }
 
+}
+
+
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+    .received {
+        width:300px;
+        left:50%;
+        transform:translate(-50%, -50%);
+    }
+
+    .cake-img {
+        width:500px !important;
+    }
+
+    .hbd-img {
+        width:400px;
+    }
+
+    .left-img, .right-img {
+        width:250px;
+    }
+
+    .big-smiski-first {
+        margin-top:-400px;
+    }
 }
