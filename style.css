@@ -102,7 +102,18 @@ body{
     display:none;
 
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
+    
+    overflow-y:scroll;
+    overflow-x:hidden;
+    
+    padding-top:60px;
+}
+
+.big-smiski{
+    width:100%;
+    height:auto;
+    display:block;
 }
 
 
