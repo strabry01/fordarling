@@ -241,7 +241,21 @@ body{
 
 /* Landscape orientation enforcement for mobile/tablet */
 @media (max-width: 1024px) and (orientation: portrait) {
-    body, .first-screen, .second-screen {
+    html, body, .first-screen, .second-screen {
         display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+}
+
+/* Ensure landscape displays properly */
+@media (max-width: 1024px) and (orientation: landscape) {
+    html, body {
+        display: block !important;
+        visibility: visible !important;
+        width: 100% !important;
+        height: 100% !important;
     }
 }
