@@ -238,3 +238,10 @@ body{
         margin-top:-400px;
     }
 }
+
+/* Landscape orientation enforcement for mobile/tablet */
+@media (max-width: 1024px) and (orientation: portrait) {
+    body, .first-screen, .second-screen {
+        display: none !important;
+    }
+}

@@ -12,7 +12,7 @@ function lockLandscapeOrientation() {
     if (!isMobileOrTablet()) return;
     
     if (screen.orientation && screen.orientation.lock) {
-        screen.orientation.lock('landscape').catch(err => {
+        screen.orientation.lock('landscape-primary').catch(err => {
             console.log('Orientation lock not supported on this device');
         });
     } else if (screen.lockOrientation) {
@@ -21,9 +21,29 @@ function lockLandscapeOrientation() {
     }
 }
 
+// Block portrait mode
+function blockPortraitMode() {
+    if (!isMobileOrTablet()) return;
+    
+    const checkOrientation = () => {
+        if (window.innerHeight > window.innerWidth) {
+            // Portrait mode detected
+            document.body.style.display = 'none';
+        } else {
+            // Landscape mode
+            document.body.style.display = 'block';
+        }
+    };
+    
+    checkOrientation();
+    window.addEventListener('orientationchange', checkOrientation);
+    window.addEventListener('resize', checkOrientation);
+}
+
 // Initialize on page load
 window.addEventListener('DOMContentLoaded', () => {
     lockLandscapeOrientation();
+    blockPortraitMode();
 });
 
 // Try to lock orientation on user interaction
