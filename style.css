@@ -4,18 +4,40 @@
     box-sizing:border-box;
 }
 
+html, body {
+    height: 100%;
+    background: transparent;
+}
+
 body{
     width:100%;
-    height:auto;
+    min-height:100vh;
+    position:relative;
 
-    background-image:url("backgrounds/bg.png");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    /* background moved to fixed pseudo-element to avoid cut on scroll */
+    background: transparent;
 
     overflow:auto;
 
     font-family:Arial, sans-serif;
+}
+
+/* Fixed background layer that stays in place while content scrolls */
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("backgrounds/bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0; /* sit behind content but above browser chrome */
+    pointer-events: none;
+    -webkit-transform: translateZ(0); /* improve performance on some mobile browsers */
+    transform: translateZ(0);
 }
 
 
@@ -29,15 +51,22 @@ body{
 
     display:flex;
     flex-direction:column;
-
     justify-content:flex-start;
     align-items:center;
+    position:relative;
 
     gap:25px;
+    padding-top:40px;
     
     overflow-y:auto;
     overflow-x:hidden;
-    position:relative;
+}
+
+/* Make sure main containers are above the background and transparent */
+.first-screen, .second-screen, .cake-container, .big-smiski-first {
+    position: relative;
+    z-index: 1;
+    background: transparent !important;
 }
 
 
@@ -51,7 +80,7 @@ body{
     animation:float 2s ease-in-out infinite;
     
     position:absolute;
-    left:200px;
+    left:10%;
     top:15%;
     transform:translateY(-50%);
     display:flex;
@@ -112,7 +141,11 @@ body{
     position:relative;
     z-index:1;
     display:block;
-    margin-top:-750px;
+    margin-top:20px;
+    margin-bottom:20px;
+    /* remove strict max-height to avoid unexpected cropping */
+    max-height: none;
+    object-fit:contain;
 }
 
 
@@ -258,4 +291,52 @@ body{
         width: 100% !important;
         height: 100% !important;
     }
+}
+
+/* Landscape adjustments for mobile/tablet to prevent cropping and improve scaling */
+@media (max-width: 1024px) and (orientation: landscape) {
+    /* make large artwork scale down */
+    .big-smiski-first {
+        margin-top: -200px;
+        max-width: 1200px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /* received box positioning */
+    .received {
+        width: 260px;
+        max-width: 45%;
+        left: auto !important;
+        right: 24px !important;
+        top: 8% !important;
+        transform: none !important;
+    }
+
+    /* cake and side images scale better */
+    .cake-img {
+        width: 60%;
+        max-width: 900px;
+    }
+
+    .left-img, .right-img {
+        width: 18%;
+        max-width: 300px;
+    }
+
+    .hbd-img {
+        width: 40%;
+        max-width: 600px;
+    }
+
+    /* ensure first screen can scroll without cutting background */
+    .first-screen, .second-screen {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Prevent any accidental white background from child wrappers */
+.first-screen > *, .second-screen > * {
+    background: transparent !important;
 }
