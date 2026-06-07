@@ -81,7 +81,7 @@ body::before{
     
     position:absolute;
     left:10%;
-    top:50%; /* moved to 50% */
+    top:55%; /* moved to 55% */
     transform:translateY(-50%);
     display:flex;
     justify-content:center;
@@ -309,7 +309,7 @@ body::before{
         max-width: 80%;
         left: 200px !important;
         right: auto !important;
-        top:50% !important; /* moved to 50% */
+        top:55% !important; /* moved to 55% */
         transform: translateY(-50%) !important;
     }
 
@@ -348,7 +348,7 @@ body::before{
     .received {
         left: 200px !important;
         right: auto !important;
-        top:50% !important; /* moved to 50% */
+        top:55% !important; /* moved to 55% */
         width: 400px !important;
         max-width: 80% !important;
         transform: translateY(-50%) !important;
@@ -383,7 +383,7 @@ body::before{
         right: auto !important;
         width: 300px !important;
         max-width: 45% !important;
-        top: 50% !important; /* moved to 50% */
+        top: 55% !important; /* moved to 55% */
         transform: none !important;
     }
 }
@@ -392,7 +392,7 @@ body::before{
     .received {
         left: 12px !important;
         width: 240px !important;
-        top: 50% !important; /* moved to 50% */
+        top: 55% !important; /* moved to 55% */
     }
 }
 
