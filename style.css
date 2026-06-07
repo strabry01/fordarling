@@ -80,8 +80,8 @@ body::before{
     animation:float 2s ease-in-out infinite;
     
     position:absolute;
-    left:10%;
-    top:35%; /* moved to 50% */
+    left:15%; /* nudged right from 10% */
+    top:35%; /* keep vertical unchanged */
     transform:translateY(-50%);
     display:flex;
     justify-content:center;
@@ -307,9 +307,9 @@ body::before{
     .received {
         width: 400px;
         max-width: 80%;
-        left: 200px !important;
+        left: 240px !important; /* moved right from 200px */
         right: auto !important;
-        top:35% !important; /* moved to 50% */
+        top:35% !important; /* keep vertical unchanged */
         transform: translateY(-50%) !important;
     }
 
@@ -346,9 +346,9 @@ body::before{
     }
 
     .received {
-        left: 200px !important;
+        left: 240px !important; /* desktop nudged right */
         right: auto !important;
-        top:35% !important; /* moved to 50% */
+        top:35% !important; /* keep vertical unchanged */
         width: 400px !important;
         max-width: 80% !important;
         transform: translateY(-50%) !important;
@@ -379,20 +379,20 @@ body::before{
 /* Mobile landscape specific adjustments */
 @media (max-width: 1024px) and (orientation: landscape) {
     .received {
-        left: 20px !important;     /* keep on left edge for small screens */
+        left: 36px !important;     /* nudged right from 20px */
         right: auto !important;
         width: 300px !important;
         max-width: 45% !important;
-        top: 35% !important; /* moved to 50% */
+        top: 35% !important; /* keep vertical unchanged */
         transform: none !important;
     }
 }
 
 @media (max-width: 480px) and (orientation: landscape) {
     .received {
-        left: 12px !important;
+        left: 24px !important; /* nudged right from 12px */
         width: 240px !important;
-        top: 35% !important; /* moved to 50% */
+        top: 35% !important; /* keep vertical unchanged */
     }
 }
 
