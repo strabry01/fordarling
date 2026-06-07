@@ -81,7 +81,7 @@ body::before{
     
     position:absolute;
     left:10%;
-    top:15%;
+    top:22%; /* moved down from 15% */
     transform:translateY(-50%);
     display:flex;
     justify-content:center;
@@ -309,7 +309,7 @@ body::before{
         max-width: 80%;
         left: 200px !important;
         right: auto !important;
-        top: 15% !important;
+        top: 22% !important; /* moved down from 15% */
         transform: translateY(-50%) !important;
     }
 
@@ -346,13 +346,13 @@ body::before{
     }
 
     .received {
+        left: 200px !important;
+        right: auto !important;
+        top: 22% !important; /* moved down from 15% */
         width: 400px !important;
         max-width: 80% !important;
-        position: absolute !important;
-        left: 200px !important;
-        top: 15% !important;
         transform: translateY(-50%) !important;
-        right: auto !important;
+        position: absolute !important;
     }
 
     .cake-img {
@@ -374,4 +374,49 @@ body::before{
 /* Prevent any accidental white background from child wrappers */
 .first-screen > *, .second-screen > * {
     background: transparent !important;
+}
+
+/* Mobile landscape specific adjustments */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .received {
+        left: 20px !important;     /* keep on left edge for small screens */
+        right: auto !important;
+        width: 300px !important;
+        max-width: 45% !important;
+        top: 22% !important; /* moved down */
+        transform: none !important;
+    }
+}
+
+/* Extra small landscape phones */
+@media (max-width: 480px) and (orientation: landscape) {
+    .received {
+        left: 12px !important;
+        width: 240px !important;
+        top: 22% !important; /* moved down */
+    }
+}
+
+/* Fix: keep big-smiski image visible on mobile/landscape devices */
+@media (max-width: 1024px) {
+    .big-smiski-first {
+        margin-top: 20px !important; /* remove large negative offsets on small screens */
+        margin-bottom: 20px !important;
+        max-height: 60vh !important;   /* limit height so it doesn't overflow viewport */
+        width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* give some top space so the image isn't hidden behind browser chrome */
+    .first-screen {
+        padding-top: 24px !important;
+    }
+}
+
+/* Extra small devices: tighter max-height */
+@media (max-width: 480px) {
+    .big-smiski-first {
+        max-height: 50vh !important;
+    }
 }
