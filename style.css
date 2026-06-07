@@ -81,7 +81,7 @@ body::before{
     
     position:absolute;
     left:10%;
-    top:22%; /* moved down from 15% */
+    top:40%; /* moved down from 22% */
     transform:translateY(-50%);
     display:flex;
     justify-content:center;
@@ -309,7 +309,7 @@ body::before{
         max-width: 80%;
         left: 200px !important;
         right: auto !important;
-        top: 22% !important; /* moved down from 15% */
+        top: 40% !important; /* moved down from 22% */
         transform: translateY(-50%) !important;
     }
 
@@ -348,7 +348,7 @@ body::before{
     .received {
         left: 200px !important;
         right: auto !important;
-        top: 22% !important; /* moved down from 15% */
+        top: 40% !important; /* moved down from 22% */
         width: 400px !important;
         max-width: 80% !important;
         transform: translateY(-50%) !important;
@@ -383,17 +383,16 @@ body::before{
         right: auto !important;
         width: 300px !important;
         max-width: 45% !important;
-        top: 22% !important; /* moved down */
+        top: 40% !important; /* moved down from 22% */
         transform: none !important;
     }
 }
 
-/* Extra small landscape phones */
 @media (max-width: 480px) and (orientation: landscape) {
     .received {
         left: 12px !important;
         width: 240px !important;
-        top: 22% !important; /* moved down */
+        top: 40% !important; /* moved down from 22% */
     }
 }
 
