@@ -231,15 +231,15 @@ body::before{
 @keyframes float{
 
     0%{
-        transform:translateY(0px);
+        transform:translateY(-50%) translateY(0px);
     }
 
     50%{
-        transform:translateY(-12px);
+        transform:translateY(-50%) translateY(-12px);
     }
 
     100%{
-        transform:translateY(0px);
+        transform:translateY(-50%) translateY(0px);
     }
 
 }
@@ -310,7 +310,7 @@ body::before{
         left: 240px !important; /* moved right from 200px */
         right: auto !important;
         top:35% !important; /* keep vertical unchanged */
-        transform: translateY(-50%) !important;
+        /* allow animation to control transform */
     }
 
     /* cake and side images restored to original sizes */
@@ -351,7 +351,7 @@ body::before{
         top:35% !important; /* keep vertical unchanged */
         width: 400px !important;
         max-width: 80% !important;
-        transform: translateY(-50%) !important;
+        /* allow animation to control transform */
         position: absolute !important;
     }
 
@@ -384,7 +384,7 @@ body::before{
         width: 300px !important;
         max-width: 45% !important;
         top: 35% !important; /* keep vertical unchanged */
-        transform: none !important;
+        /* allow animation to control transform */
     }
 }
 
@@ -393,6 +393,7 @@ body::before{
         left: 24px !important; /* nudged right from 12px */
         width: 240px !important;
         top: 35% !important; /* keep vertical unchanged */
+        /* allow animation to control transform */
     }
 }
 
