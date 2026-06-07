@@ -336,6 +336,41 @@ body::before{
     }
 }
 
+/* Restore desktop layout defaults so responsive rules don't override large-screen layout */
+@media (min-width: 1025px) {
+    .big-smiski-first {
+        margin-top: -750px !important;
+        margin-bottom: 20px !important;
+        max-height: none !important;
+        width: 100%;
+    }
+
+    .received {
+        width: 400px !important;
+        max-width: 80% !important;
+        position: absolute !important;
+        left: 200px !important;
+        top: 15% !important;
+        transform: translateY(-50%) !important;
+        right: auto !important;
+    }
+
+    .cake-img {
+        width: 1200px !important;
+        height: auto !important;
+    }
+
+    .left-img, .right-img {
+        width: 400px !important;
+        height: auto !important;
+    }
+
+    /* ensure default first/second screen spacing for desktop */
+    .first-screen, .second-screen {
+        padding-top: 0 !important;
+    }
+}
+
 /* Prevent any accidental white background from child wrappers */
 .first-screen > *, .second-screen > * {
     background: transparent !important;
