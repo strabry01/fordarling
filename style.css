@@ -415,6 +415,26 @@ body::before{
     }
 }
 
+/* Final mobile override: ensure big-smiski-first fills viewport and isn't cut */
+@media (max-width: 1024px) {
+    .big-smiski-first {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        min-height: 100vh !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: contain !important;
+        display: block !important;
+        z-index: 2 !important; /* keep above background and overlaps */
+    }
+
+    /* ensure container scrolls to reveal the full image */
+    .first-screen {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
 /* Extra small devices: tighter max-height */
 @media (max-width: 480px) {
     .big-smiski-first {
