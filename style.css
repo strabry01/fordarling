@@ -295,38 +295,38 @@ body::before{
 
 /* Landscape adjustments for mobile/tablet to prevent cropping and improve scaling */
 @media (max-width: 1024px) and (orientation: landscape) {
-    /* make large artwork scale down */
+    /* make large artwork scale appropriately (restore original desktop-like look) */
     .big-smiski-first {
-        margin-top: -200px;
+        margin-top: -750px; /* original position */
         max-width: 1200px;
         width: 100%;
         object-fit: contain;
     }
 
-    /* received box positioning */
+    /* received box positioning - restored to left */
     .received {
-        width: 260px;
-        max-width: 45%;
-        left: auto !important;
-        right: 24px !important;
-        top: 8% !important;
-        transform: none !important;
+        width: 400px;
+        max-width: 80%;
+        left: 200px !important;
+        right: auto !important;
+        top: 15% !important;
+        transform: translateY(-50%) !important;
     }
 
-    /* cake and side images scale better */
+    /* cake and side images restored to original sizes */
     .cake-img {
-        width: 60%;
-        max-width: 900px;
+        width: 1200px;
+        max-width: 100%;
     }
 
     .left-img, .right-img {
-        width: 18%;
-        max-width: 300px;
+        width: 400px;
+        max-width: 100%;
     }
 
     .hbd-img {
-        width: 40%;
-        max-width: 600px;
+        width: 600px;
+        max-width: 100%;
     }
 
     /* ensure first screen can scroll without cutting background */
