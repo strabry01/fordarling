@@ -441,3 +441,85 @@ body::before{
         max-height: 50vh !important;
     }
 }
+
+/* Responsive composition: keep same visual arrangement on phones/tablets */
+@media (max-width: 1024px) {
+    /* Ensure first screen stacks and centers */
+    .first-screen {
+        align-items: center;
+        padding-top: 12px !important;
+    }
+
+    /* Received box centered and scaled */
+    .received {
+        position: relative !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        margin: 0 auto 12px auto !important;
+        width: min(72vw, 420px) !important;
+    }
+
+    /* Big smiski fills width but is constrained so top stays visible */
+    .big-smiski-first {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 50vh !important;
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    /* Second screen: cake + sides responsive and aligned */
+    .second-screen {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 16px 8px !important;
+    }
+
+    .cake-container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4vw !important;
+        width: 100% !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .left-img, .right-img {
+        width: min(22vw, 260px) !important;
+        max-width: 30% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .cake-img {
+        width: min(34vw, 420px) !important;
+        max-width: 55% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 !important;
+    }
+
+    .hbd-img {
+        width: min(32vw, 380px) !important;
+        max-width: 60% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Keep everything scrollable and prevent background cut */
+    html, body, .first-screen, .second-screen {
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+/* Extra small phones: slightly larger scaling */
+@media (max-width: 480px) {
+    .left-img, .right-img { width: min(28vw, 200px) !important; }
+    .cake-img { width: min(40vw, 260px) !important; }
+    .received { width: min(84vw, 340px) !important; }
+}
