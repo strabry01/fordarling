@@ -24,9 +24,12 @@
 </head>
 
 <body>
+    <div id="rotateOverlay" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(255,255,255,0.95);color:#333;z-index:99999;text-align:center;padding:20px;font-size:18px;">Please rotate your device to landscape for the intended experience.</div>
     <noscript style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;color:#333;z-index:9999;text-align:center;padding:20px;">
         Please open this page in landscape mode and enable JavaScript for the intended experience.
     </noscript>
+
+    <main id="appMain">
 
     <!-- FIRST SCREEN -->
 
@@ -48,14 +51,21 @@
     <!-- SECOND SCREEN -->
 
     <div class="second-screen" id="secondScreen">
-        <img src="smiski/hbd.png" class="hbd-img" alt="Happy Birthday">
-        
-        <div class="cake-container">
-            <img src="smiski/left.png" class="left-img" alt="Left">
-            <img src="designs/cake.gif" class="cake-img" alt="Cake">
-            <img src="smiski/right.png" class="right-img" alt="Right">
-        </div>
-    </div>
+        <div class="cake-stage">
+            <img src="smiski/hbd.png" class="hbd-img" alt="Happy Birthday">
+
+            <div class="cake-container">
+                <img src="smiski/left.png" class="left-img" alt="Left">
+                <img src="designs/cake.gif" class="cake-img" alt="Cake">
+                <img src="smiski/right.png" class="right-img" alt="Right">
+            </div>
+        </div> <!-- end .cake-stage -->
+
+        <!-- book removed -->
+
+    </div> <!-- end .second-screen -->
+
+    </main>
 
 
 

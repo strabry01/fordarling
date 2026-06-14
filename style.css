@@ -173,6 +173,14 @@ body::before{
     display:flex;
 }
 
+/* Ensure second screen is scrollable like first screen */
+.second-screen, .second-screen.active {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+}
+
 .hbd-img{
     width:600px;
     height:auto;
@@ -522,4 +530,97 @@ body::before{
     .left-img, .right-img { width: min(28vw, 200px) !important; }
     .cake-img { width: min(40vw, 260px) !important; }
     .received { width: min(84vw, 340px) !important; }
+}
+
+/* Cake stage: group hbd + cake container and center content */
+.cake-stage{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:24px;
+    padding:24px 12px;
+    box-sizing:border-box;
+}
+
+/* Slightly reduce top margin of hbd inside stage */
+.cake-stage .hbd-img{
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    width: min(60vw, 700px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Ensure cake container stays centered and items scale */
+.cake-stage .cake-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:24px;
+    flex-wrap:wrap;
+}
+
+/* Make left/right/cake images responsive inside stage */
+.cake-stage .left-img, .cake-stage .right-img {
+    width: min(22vw, 260px) !important;
+    max-width: 30% !important;
+    height: auto !important;
+}
+
+.cake-stage .cake-img{
+    width: min(34vw, 480px) !important;
+    max-width: 60% !important;
+    height: auto !important;
+    display:block;
+}
+
+/* Small phones: stack cake items more tightly */
+@media (max-width: 480px) {
+    .cake-stage{
+        gap:12px;
+        padding:12px 8px;
+    }
+    .cake-stage .cake-container{ gap:12px; }
+    .cake-stage .left-img, .cake-stage .right-img { width: min(30vw, 160px) !important; }
+    .cake-stage .cake-img { width: min(48vw, 220px) !important; }
+    .cake-stage .hbd-img { width: min(72vw, 300px) !important; }
+}
+
+/* Preserve original first-screen .received positioning on all devices */
+/* This override prevents responsive rules from converting the box to relative flow */
+.received {
+    position: absolute !important;
+    left: 15% !important;      /* keep the chosen horizontal offset */
+    top: 35% !important;       /* keep vertical position */
+    width: 400px !important;
+    max-width: 80% !important;
+    transform: translateY(-50%) !important; /* keep floating center baseline */
+    z-index: 10 !important;
+}
+
+/* Disable floating animation for .received — keep it statically positioned */
+.received {
+    animation: none !important;
+    /* keep vertical centering baseline */
+    transform: translateY(-50%) !important;
+}
+
+/* Ensure small landscape tweaks don't override the animation transform */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .received {
+        left: 240px !important; /* keep desktop-like offset on landscape */
+        top: 35% !important;
+        transform: translateY(-50%) !important;
+    }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+    .received {
+        left: 24px !important; /* small phones keep left offset but remain absolute */
+        top: 35% !important;
+        transform: translateY(-50%) !important;
+    }
 }
